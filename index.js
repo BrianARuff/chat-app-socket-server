@@ -24,12 +24,17 @@ const io = socket(server, {
 
 io.on("connection", (socket) => {
   console.log("User connected");
-  socket.on("chat", (data) => {
-    console.log(data);
-    io.sockets.emit("chat", data);
-  });
-  socket.on("keypress", (data) => {
-    console.log(data);
-    socket.broadcast.emit("keypress", data);
-  });
+  /*
+  socket event example
+   socket.on("chat", (data) => {
+     console.log(data);
+     io.sockets.emit("chat", data);
+   });
+   ------------------------------------------
+   broadcast example
+   socket.on("keypress", (data) => {
+     console.log(data);
+     socket.broadcast.emit("keypress", data);
+    });
+  */
 });
